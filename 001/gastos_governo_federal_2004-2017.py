@@ -29,7 +29,6 @@ bi = 1000000000.0
 
 
 def datas(k,c):
-    dataArr = []
     for i in year:
         url = url1+str(i)+url2+str(k)
         req = requests.get(url)
@@ -56,7 +55,6 @@ def datas(k,c):
 
 
 def plotCost(dataY, nameR):
-    print(dataY)
     plt.grid(True, linestyle="--")
     plt.title("Gastos Destinados pelo Governo Federal (2004-2017)\n", fontsize="20")
     plt.xlabel("Ano", fontsize="16")
