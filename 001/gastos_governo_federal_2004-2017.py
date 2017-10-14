@@ -11,91 +11,89 @@ import matplotlib.pyplot as plt
 import numpy as np
 from bs4 import BeautifulSoup
 
-reqUrl = "http://www.portaltransparencia.gov.br/PortalComprasDiretasOEOrgaoSubordinado.asp?Ano=%i&CodigoOS=%s"
+URL = "http://www.portaltransparencia.gov.br/PortalComprasDiretasOEOrgaoSubordinado.asp?Ano=%i&CodigoOS=%s"
+ANOS = range(2004, 2018)
+BILHAO = 1000000000.0
 
-year = range(2004,2018)
-bi = 1000000000.0
+"""
+    CÓDIGOS
+    Presidência República: 20000
+    Ciência e Tec: 24000
+    Educação: 26000
+    Previdência Social: 33000
+    Saúde: 36000
+    Meio Ambiente: 44000
+    Esporte: 51000
+"""
 
-#Presidência República: 20000
-#Ciência e Tec: 24000
-#Educação: 26000
-#Previdência Social: 33000
-#Saúde: 36000
-#Meio Ambiente: 44000
-#Esporte: 51000
-
-
-def datas(k):
-    dataArr = []
-    for i in year:
-        url = reqUrl %(i, k) # Usando sintaxe mais limpa para juntar os valores
-        req = requests.get(url)
-        bsObj = BeautifulSoup(req.content, "html.parser")
-        data1 = bsObj.find_all("td", {"class":"colunaValor"}, limit=2)
-        data2 = r2e(data1, "[<td class=\"colunaValor\">")  # Evitando repetição de código usand função externa
-        data2 = r2e(data2, "<td class=\"colunaValor\">")
-        data2 = r2e(data2, "</td>")
-        data2 = r2e(data2, "]")
-        data2 = r2e(data2, ".")
-        data2 = r2e(data2, "\r\n")
-        data2 = r2e(data2, " ")
-        data2 = re.sub(r"^[0-9]*\,[0-9]*\,","", data2)
-        data2 = str(data2).replace(",",".")
-
-        dataArr.append(float(data2)) # Convertendo direto o dado pra não ser necessária reiteração
-    print(dataArr)
-    return np.array(dataArr)/bi # Retornando direto
+def get_valores(codigo):
+    values = []
+    for ano in ANOS:
+        url = URL %(ano, codigo) # Usando sintaxe mais limpa para juntar os valores
+        rq = requests.get(url)
+        html = BeautifulSoup(rq.content, "html.parser")
+        data = html.find_all("td", {"class":"colunaValor"}, limit=2)
+        data = r2e(data, "[<td class=\"colunaValor\">")  # Evitando repetição de código usando função externa
+        data = r2e(data, "<td class=\"colunaValor\">")
+        data = r2e(data, "</td>")
+        data = r2e(data, "]")
+        data = r2e(data, ".")
+        data = r2e(data, "\r\n")
+        data = r2e(data, " ")
+        data = re.sub(r"^[0-9]*\,[0-9]*\,", "", data)
+        data = r2e(data, ",")
+        values.append(float(data)) # Convertendo direto o dado pra não ser necessária reiteração
+    print(values)
+    return np.array(values)/BILHAO # Retornando direto
 
 # Replace de alguma coisa para valor vazio
 def r2e(data, pattern):
     return str(data).replace(pattern, "")
 
-def plotCost(dataY, nameR):
+def grafico_individual(valores, nome):
     plt.grid(True, linestyle="--")
     plt.title("Gastos Destinados pelo Governo Federal (2004-2017)\n", fontsize="20")
     plt.xlabel("Ano", fontsize="16")
     plt.ylabel("Em bilhões de R$", fontsize="16")
-    plt.plot(year, dataY, label=nameR)
-    
-    legend = plt.legend(bbox_to_anchor=(1.05, 1),loc=2, fontsize=12, borderaxespad=0.)
+    plt.plot(ANOS, valores, label=nome)
+    legend = plt.legend(bbox_to_anchor=(1.05, 1), loc=2, fontsize=12, borderaxespad=0.)
     legend.get_frame().set_facecolor('#ffffff')
-   
     plt.show()
 
-def plotCostAll():
+def grafico_unificado():
     plt.grid(True, linestyle="--")
     plt.title("Gastos Destinados pelo Governo Federal (2004-2017)\n", fontsize="20")
     plt.xlabel("Ano", fontsize="16")
     plt.ylabel("Em bilhões de R$", fontsize="16")
-    plt.plot(year, v_presidencia, label="Presidência da República")
-    plt.plot(year, v_ciencia_tec, label="Ciência e Tecnologia")
-    plt.plot(year, v_educacao, label="Educação")
-    plt.plot(year, v_prev_social, label="Previdência Social")
-    plt.plot(year, v_saude, label="Saúde")
-    plt.plot(year, v_meio_ambiente, label="Meio Ambiente")
-    plt.plot(year, v_esporte, label="Esporte")
-    
-    legend = plt.legend(bbox_to_anchor=(1.01, 1),loc=2, fontsize=12, borderaxespad=0.)
-    legend.get_frame().set_facecolor('#ffffff')
+    plt.plot(ANOS, v_presidencia, label="Presidência da República")
+    plt.plot(ANOS, v_ciencia_tec, label="Ciência e Tecnologia")
+    plt.plot(ANOS, v_educacao, label="Educação")
+    plt.plot(ANOS, v_prev_social, label="Previdência Social")
+    plt.plot(ANOS, v_saude, label="Saúde")
+    plt.plot(ANOS, v_meio_ambiente, label="Meio Ambiente")
+    plt.plot(ANOS, v_esporte, label="Esporte")
+    formatacao_legenda = plt.legend(bbox_to_anchor=(1.01, 1), loc=2, fontsize=12, borderaxespad=0.)
+    formatacao_legenda.get_frame().set_facecolor('#ffffff')
 
     #plt.rcParams["figure.figsize"] = [15,7]
     #plt.savefig("educ-sau.png")
     plt.show()
 
-v_presidencia = datas(20000)
-v_ciencia_tec = datas(24000)
-v_educacao = datas(26000)
-v_prev_social = datas(33000)
-v_saude = datas(36000)
-v_meio_ambiente = datas(44000)
-v_esporte = datas(51000)
+# Obtendo os valores
+v_presidencia = get_valores(20000)
+v_ciencia_tec = get_valores(24000)
+v_educacao = get_valores(26000)
+v_prev_social = get_valores(33000)
+v_saude = get_valores(36000)
+v_meio_ambiente = get_valores(44000)
+v_esporte = get_valores(51000)
 
-plotCost(v_presidencia, "Presidência da República")
-plotCost(v_ciencia_tec, "Ciência e Tecnologia")
-plotCost(v_educacao, "Educação")
-plotCost(v_prev_social, "Previdência Social")
-plotCost(v_saude, "Saúde")
-plotCost(v_meio_ambiente, "Meio Ambiente")
-plotCost(v_esporte, "Esporte")
+grafico_individual(v_presidencia, "Presidência da República")
+grafico_individual(v_ciencia_tec, "Ciência e Tecnologia")
+grafico_individual(v_educacao, "Educação")
+grafico_individual(v_prev_social, "Previdência Social")
+grafico_individual(v_saude, "Saúde")
+grafico_individual(v_meio_ambiente, "Meio Ambiente")
+grafico_individual(v_esporte, "Esporte")
 
-plotCostAll()
+grafico_unificado()
