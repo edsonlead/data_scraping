@@ -2,10 +2,9 @@
 
 ### Bibliotecas
 
-* re
 * requests
 * matplotlib
-* nump
+* numpy
 * bs4
 
 **Ainda em desenvolvimento**
@@ -20,6 +19,6 @@ Próximos passos:
 Para executar:
 
 ```
-    $ python3.6 gastos_governo_federal_2004-2017.py
+    $ python3.6 main.py
 ```
 
