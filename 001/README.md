@@ -2,23 +2,21 @@
 
 ### Bibliotecas
 
-* requests
+* bs4
 * matplotlib
 * numpy
-* bs4
+* requests
+* seaborn
 
-**Ainda em desenvolvimento**
+*Ainda em desenvolvimento*
 
-Próximos passos:
+### Próximos passos:
 
-* Renomear arquivo
-* Melhorar a limpeza dos dados
-* Melhorar a geração dos gráficos
-* Dividir em outros arquivos para melhor aplicação
+* Renomear arquivos
+* Refatoração
 
-Para executar:
+### Para executar:
 
 ```
     $ python3.6 main.py
 ```
-
