@@ -35,9 +35,9 @@ def get_valores(codigo):
         data = data.get_text().strip()
         data = (str(data).replace(".",""))
         data = (str(data).replace(",","."))
-        print(data)
+#       print(data)
         values.append(float(data))
-    print(values)
+#    print(values)
     return np.array(values)/BILHAO
 
 
