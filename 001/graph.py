@@ -1,21 +1,29 @@
 import matplotlib.pyplot as plt
-from gastos_governo import ANOS
+import seaborn as sns
+from gastos_governo import ANOS, get_valores
 
-def grafico_individual(valores, nome):
-    plt.grid(True, linestyle="--")
-    plt.title("Gastos Destinados pelo Governo Federal (2004-2017)\n", fontsize="20")
-    plt.xlabel("Ano", fontsize="16")
-    plt.ylabel("Em bilhões de R$", fontsize="16")
+v_presidencia = get_valores(20000)
+v_ciencia_tec = get_valores(24000)
+v_educacao = get_valores(26000)
+v_prev_social = get_valores(33000)
+v_saude = get_valores(36000)
+v_meio_ambiente = get_valores(44000)
+v_esporte = get_valores(51000)
+
+def sinplot(valores,nome):
     plt.plot(ANOS, valores, label=nome)
-    legend = plt.legend(bbox_to_anchor=(1.05, 1), loc=2, fontsize=12, borderaxespad=0.)
-    legend.get_frame().set_facecolor('#ffffff')
+    plt.title("Gastos Destinados pelo Governo Federal (2004-2017)\n")
+    plt.xlabel("Anos")
+    plt.ylabel("Em bilhões de R$")
+    legend = plt.legend()
+    #plt.savefig("sinplot.png")
     plt.show()
-'''
-def grafico_unificado():
+
+def multplot():
     plt.grid(True, linestyle="--")
-    plt.title("Gastos Destinados pelo Governo Federal (2004-2017)\n", fontsize="20")
-    plt.xlabel("Ano", fontsize="16")
-    plt.ylabel("Em bilhões de R$", fontsize="16")
+    plt.title("Gastos Destinados pelo Governo Federal (2004-2017)\n")
+    plt.xlabel("Anos")
+    plt.ylabel("Em bilhões de R$")
     plt.plot(ANOS, v_presidencia, label="Presidência da República")
     plt.plot(ANOS, v_ciencia_tec, label="Ciência e Tecnologia")
     plt.plot(ANOS, v_educacao, label="Educação")
@@ -23,10 +31,6 @@ def grafico_unificado():
     plt.plot(ANOS, v_saude, label="Saúde")
     plt.plot(ANOS, v_meio_ambiente, label="Meio Ambiente")
     plt.plot(ANOS, v_esporte, label="Esporte")
-    formatacao_legenda = plt.legend(bbox_to_anchor=(1.01, 1), loc=2, fontsize=12, borderaxespad=0.)
-    formatacao_legenda.get_frame().set_facecolor('#ffffff')
-
-    #plt.rcParams["figure.figsize"] = [15,7]
-    #plt.savefig("educ-sau.png")
+    legend = plt.legend()
+    #plt.savefig("multplot.png")
     plt.show()
-'''
