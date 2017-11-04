@@ -1,10 +1,8 @@
 ## Gastos do Governo Federal (2004-2017)
 
-> Dados recuperados do Portal da Transparência
-
-> Dados de gastos de órgãos superiores do período de 2004 a 2017
-
-> Gráficos ilustrando os gastos do governo federal
+* Dados recuperados do Portal da Transparência
+* Dados de gastos de órgãos superiores do período de 2004 a 2017
+* Gráficos ilustrando os gastos do governo federal
 
 ### Bibliotecas
 
