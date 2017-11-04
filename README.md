@@ -8,11 +8,13 @@ Raspagem de dados públicos
 	* Dados de gastos de órgãos superiores do período de 2004 a 2017
 	* Gráficos ilustrando os gastos do governo federal
 
-		- Gráfico para cada órgão superior
-		- Gráfico único com todos os dados recuperados
-		- Gráficos apresentados em bilhões de reais x anos(2004-2017)
+		* Gráfico para cada órgão superior
+		* Gráfico único com todos os dados recuperados
+		* Gráficos apresentados em bilhões de reais x anos(2004-2017)
 
 	* Post no site: [link](http://edsonlead.com/hackeando-gastos-governamentais-com-python-3/)
+
+***
 
 * [002 - Captura de Dados de Servidores do Poder Executivo](002/)
 
