@@ -1,6 +1,9 @@
+import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 from spend import YEARS, get_value
+
+dir_images = "images"
 
 """
     CODES
@@ -21,13 +24,16 @@ v_health = get_value(36000)
 v_environment = get_value(44000)
 v_sport = get_value(51000)
 
+if not os.path.exists(dir_images):
+    os.makedirs(dir_images)
+
 def sinplot(values,name):
     plt.plot(YEARS, values, label=name)
     plt.title("Gastos Destinados pelo Governo Federal (2004-2017)\n")
     plt.xlabel("Anos")
     plt.ylabel("Em bilhões de R$")
     legend = plt.legend()
-    plt.savefig(name+".png")
+    plt.savefig("images/"+name+".png")
     plt.show()
 
 def mulplot():
@@ -43,5 +49,5 @@ def mulplot():
     plt.plot(YEARS, v_environment, label="Meio Ambiente")
     plt.plot(YEARS, v_sport, label="Esporte")
     legend = plt.legend()
-    plt.savefig("mulplot.png")
+    plt.savefig("images/mulplot.png")
     plt.show()

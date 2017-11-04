@@ -9,6 +9,7 @@
 * bs4
 * matplotlib
 * numpy
+* os
 * requests
 * seaborn
 
