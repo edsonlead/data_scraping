@@ -21,3 +21,11 @@ Raspagem de dados públicos
     Em desenvolvimento :)
 
     Objetivo: captura de dados públicos de servidores civis e militares do poder executivo federal. Os dados são: cpf, nome, cargo, carga horária, salário bruto e salário líquido.
+    
+***
+
+* [003 - Cartão Corporativo do Governo do Estado do Ceará (2015 - 2017)](003/)
+
+    Em desenvolvimento :)
+
+    Objetivo: captura de dados do cartão corporativo do Estado do CE e representação gráfica dos gastos e suas médias, médias ponderadas e desvião padrão.
