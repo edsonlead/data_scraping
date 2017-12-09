@@ -26,6 +26,12 @@ Raspagem de dados públicos
 
 * [003 - Cartão Corporativo do Governo do Estado do Ceará (2015 - 2017)](003/)
 
+    * Dados recuperados do Portal da Transparência do Governo do Estado do Ceará
+    * Dados de gastos do cartão corporativo de responsabilidade do Chefe do Poder Executivo, período de 2015 a 2017
+    * Média de gastos e desvio padrão anuais
+    * Gráficos ilustrando os gastos do cartão corporativo
+
+    * Post no site: [link](http://edsonlead.com/)
+
     Em desenvolvimento :)
 
-    Objetivo: captura de dados do cartão corporativo do Estado do CE e representação gráfica dos gastos e suas médias, médias ponderadas e desvião padrão.
