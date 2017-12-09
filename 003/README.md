@@ -39,16 +39,16 @@
 
 ```
     Gastos com Cartão Corporativo 2017
-    Média dos gastos: R$ 2674.049090909091
-    Desvio padrão: R$ 1878.005249835118
+    Média dos gastos: R$ 2674.05
+    Desvio padrão: R$ 1878.01
     None
     Gastos com Cartão Corporativo 2016
-    Média dos gastos: R$ 1016.2541666666667
-    Desvio padrão: R$ 979.1299110984401
+    Média dos gastos: R$ 1016.25
+    Desvio padrão: R$ 979.13
     None
     Gastos com Cartão Corporativo 2015
-    Média dos gastos: R$ 786.4249999999998
-    Desvio padrão: R$ 598.6808928037818
+    Média dos gastos: R$ 786.42
+    Desvio padrão: R$ 598.68
     None
 
 ```
