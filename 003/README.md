@@ -2,8 +2,8 @@
 
 * Dados recuperados do Portal da Transparência do Governo do Estado do Ceará
 * Dados de gastos do cartão corporativo de responsabilidade do Chefe do Poder Executivo, período de 2015 a 2017
+* Média de gastos e desvio padrão anuais
 * Gráficos ilustrando os gastos do cartão corporativo
-* Gráficos ilustrando a média e o desvio padrão
 
 **em desenvolvimento**
 
@@ -31,6 +31,7 @@
 ### Para executar
 
 ```
+
     $ python3.6 main.py
 
 ```
@@ -38,6 +39,7 @@
 ### Resultado
 
 ```
+
     Gastos com Cartão Corporativo 2017
     Média dos gastos: R$ 2674.05
     Desvio padrão: R$ 1878.01
