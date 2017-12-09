@@ -31,7 +31,7 @@ Raspagem de dados públicos
     * Média de gastos e desvio padrão anuais
     * Gráficos ilustrando os gastos do cartão corporativo
 
-    * Post no site: [link](http://edsonlead.com/)
+    * Post no site: [link](http://edsonlead.com/gastos-cartao-corporativo-estado-ce/)
 
     Em desenvolvimento :)
 
