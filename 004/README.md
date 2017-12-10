@@ -29,7 +29,10 @@
 
 ### Resultado
 
-![Link do html](http://edsonlead.com/list_anime.html)
+Link do html: http://edsonlead.com/list_anime.html
+
 ![Lista de animes 1](images/figure_1.png)
+
 ![Lista de animes 2](images/figure_2.png)
+
 ![Lista de animes 3](images/figure_3.png)
