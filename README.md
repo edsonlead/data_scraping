@@ -21,7 +21,7 @@ Raspagem de dados públicos
     Em desenvolvimento :)
 
     Objetivo: captura de dados públicos de servidores civis e militares do poder executivo federal. Os dados são: cpf, nome, cargo, carga horária, salário bruto e salário líquido.
-    
+
 ***
 
 * [003 - Cartão Corporativo do Governo do Estado do Ceará (2015 - 2017)](003/)
@@ -35,3 +35,12 @@ Raspagem de dados públicos
 
     Em desenvolvimento :)
 
+***
+
+* [004 - Lista de Animes do Site Saiko](004/)
+
+    * Dados recuperados do site Saiko
+    * Dados: nome do anime, link para download e nota
+    * Lista de animes do site em tabelas no formato html
+
+	  * Post no site: [link](http://edsonlead.com/lista-de-animes-do-site-saiko/)
