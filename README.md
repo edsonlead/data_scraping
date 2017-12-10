@@ -42,4 +42,5 @@ Raspagem de dados públicos
     * Dados recuperados do site Saiko
     * Dados: nome do anime, link para download e nota
     * Lista de animes do site em tabelas no formato html
+
 		* Post no site: [link](http://edsonlead.com/lista-de-animes-do-site-saiko/)
