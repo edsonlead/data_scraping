@@ -15,7 +15,7 @@ fopen.write("<html lang='pt-br'><head>{}{}</head><title>{}</title><body>".format
 fopen.write("<div class='container'>")
 fopen.write("<h2 class='text-center'>{}</h2>".format(TITLE))
 fopen.write("<h4 class='text-center'>LEGENDADOS</h4>")
-fopen.write("<p class='text-center'>[DATA SCRAPING] Post no site: <a href='{}/' target='_blank'>{}</a></p>".format(SITE, SITE))
+fopen.write("<p class='text-center'>[DATA SCRAPING] Post no site: <a href='{}/lista-de-animes-do-site-saiko/' target='_blank'>{}</a></p>".format(SITE, SITE))
 fopen.write("<p class='text-center'>Última atualização: 10/Dez/2017</p>")
 
 for i in PAGES:
