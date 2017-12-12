@@ -1,19 +1,20 @@
 ## Lista de Animes do Site Saiko
 
-* Dados recuperados do site Saiko
-* Dados: nome do anime, link para download e nota
+* Dados recuperados de lista de animes legendados do site Saiko
+* Dados: pôster, nome, link para anime no site, nota, link de download dos episódios
 * Lista de animes do site em tabelas no formato html
 
 ### Bibliotecas
 
 * bootstrap framework
 * bs4
+* datetime
 * requests
 
 ### Funções
 
 * Para cada página da lista de animes legendados, dados são adicionados a uma lista em tabela
-* Para cada anime presente na lista do site é capturado: nome, link para download e nota
+* Para cada anime presente na lista do site é capturado: pôster, nome, link para o anime no site, nota e link de downloads dos episódios
 * A nova lista é gerada em formato .html
 
 ### Próximos passos
