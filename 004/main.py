@@ -30,7 +30,7 @@ for i in PAGES:
 
     fopen.write("<span class='badge badge-danger'>PÁGINA Nº {}</span>".format(i))
     fopen.write("<table class='table table-striped'>")
-    fopen.write("<thead class='thead-dark'><tr><th>ID</th><th>Pôster</th><th>Anime</th><th>Link</th><th>Nota</th></tr></thead>")
+    fopen.write("<thead class='thead-dark'><tr><th>ID</th><th>Pôster</th><th>Anime</th><th>Info</th><th>Nota</th></tr></thead>")
 
     for b in range(len(data_2)):
         data_ = data_2[b]
@@ -43,19 +43,31 @@ for i in PAGES:
         req_2 = requests.get(url_anime)
         html_2 = bs(req_2.content,"html.parser")
         data_3 = html_2.find("div", {"class":"list"})
-        #data_4 = data_3.find_all("a", {"class":"btn-sa"})
-        #data_4 = data_3.find_all("a")
 
+        description = html_2.find("div", {"class":"sinopse"}).find("div", {"id":"box"})
+        info_sa = html_2.find("div", {"class":"info-sa"})
 
         fopen.write("<tr>")
         fopen.write("<td>{}</td>".format(b))
         fopen.write("<td rowspan='2'><p style='text-align: center;'>{}</p></td>".format(image_anime))
-        fopen.write("<td>{}</td>".format(name_anime))
-        fopen.write("<td><a href='{}' target='_blank'>{}</a></td>".format(url_anime, url_anime))
+        fopen.write("<td><a href='{}' target='_blank'>{}</a></td>".format(url_anime, name_anime))
+        #fopen.write("<td><a href='{}' target='_blank'>{}</a></td>".format(url_anime, url_anime))
+        fopen.write("<td>{}</td>".format(info_sa))
         fopen.write("<td>{}</td>".format(user_score))
         fopen.write("</tr>")
 
-        fopen.write("<tr><td></td><td colspan='3'>")
+        fopen.write("<tr class='text-justify'><td></td>")
+
+        if description is not None:
+            description = description.get_text()
+            fopen.write("<td colspan='3'>{}</td>".format(description))
+        else:
+            description = html_2.find("div", {"class":"sinopse"})
+            fopen.write("<td colspan='3'>{}</td>".format(description))
+
+        fopen.write("</tr>")
+
+        fopen.write("<tr><td colspan='5'>")
 
 
         if data_3 is not None:
@@ -72,6 +84,7 @@ for i in PAGES:
 
 
         fopen.write("</td></tr>")
+        fopen.write("<tr><td colspan='5'></td></tr>")
 
 
     fopen.write("</table><br />")
