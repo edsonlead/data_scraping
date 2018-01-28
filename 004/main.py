@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 from datetime import datetime
 
 URL = "https://saikoanimes.com/legendados/?fwp_paged=%i"
-PAGES = range(1,10)
+PAGES = range(1,12)
 FILE = "list_anime.html"
 BOOTSTRAP = "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'>"
 CHARSET = "<meta charset='UTF-8'>"
