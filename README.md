@@ -33,8 +33,6 @@ Raspagem de dados públicos
 
     * Post no site: [link](http://edsonlead.com/gastos-cartao-corporativo-estado-ce/)
 
-    Em desenvolvimento :)
-
 ***
 
 * [004 - Lista de Animes do Site Saiko](004/)
@@ -43,4 +41,6 @@ Raspagem de dados públicos
     * Dados: nome do anime, link para download e nota
     * Lista de animes do site em tabelas no formato html
 
-		* Post no site: [link](http://edsonlead.com/lista-de-animes-do-site-saiko/)
+    * Post no site: [link](http://edsonlead.com/lista-de-animes-do-site-saiko/)
+
+*** 
