@@ -2,6 +2,7 @@ from valid_url import simple_get
 from bs4 import BeautifulSoup
 import numpy as np
 import matplotlib.pyplot as plt
+#import seaborn as sns
 
 url = 'http://transparencia.ce.gov.br/content/planejamento-e-execucao-orcamentaria/despesas/cartao-corporativo'
 html = simple_get(url)
@@ -10,9 +11,7 @@ soup = BeautifulSoup(html, 'html.parser')
 tables = soup.find_all('table')
 
 def get_values(tables):
-    
     for table in tables:
-    
         name_table = table.td.text.strip()
         
         values = table.find_all('td', {'align':'right'})
@@ -43,6 +42,7 @@ def mean_std(name_table,result):
     print(name_table)
     print('Média de gastos -> R$ {:.2f}'.format(values_mean))
     print('Desvio padrão   ->    {:.2f}'.format(values_std))
+    print()
   
 
 def sinplot(name_table, result):
@@ -59,10 +59,8 @@ def sinplot(name_table, result):
     plt.xlabel('Mês')
     plt.ylabel('Valor(R$)')
     plt.plot(x,result)
-
     plt.savefig('images/'+name_table+'.png')
     plt.show()
 
 
 get_values(tables)
-
