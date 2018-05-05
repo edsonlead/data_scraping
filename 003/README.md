@@ -58,7 +58,7 @@
 	Desvio padrão   ->    598.68
 
 ```
-![Gastos 2018](images/'Gastos com Cartão Corporativo 2018.png')
-![Gastos 2017](images/'Gastos com Cartão Corporativo 2017.png')
-![Gastos 2016](images/'Gastos com Cartão Corporativo 2016.png')
-![Gastos 2015](images/'Gastos com Cartão Corporativo 2015.png')
+![Gastos 2018](images/Gastos%20com%20Cartão%20Corporativo%202018.png)
+![Gastos 2017](images/Gastos%20com%20Cartão%20Corporativo%202017.png)
+![Gastos 2016](images/Gastos%20com%20Cartão%20Corporativo%202016.png)
+![Gastos 2015](images/Gastos%20com%20Cartão%20Corporativo%202015.png)
