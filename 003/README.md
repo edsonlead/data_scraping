@@ -26,7 +26,7 @@
 * ~Melhorar saída dos resultados~
 * ~Melhorar apresentação dos meses no gráfico~
 * ~Salvar gráficos em .png~
-* Gráfico unificado
+* ~Gráfico unificado~
 * Refatoração
 
 ### Para executar
@@ -40,25 +40,25 @@
 ### Resultado
 
 ```
-
 	Gastos com Cartão Corporativo 2018
-	Média de gastos -> R$ 2513.30
-	Desvio padrão   ->    1723.37
+	Média de gastos ->   R$   2513.30
+	Desvio padrão   -> ± R$   1723.37
 
 	Gastos com Cartão Corporativo 2017
-	Média de gastos -> R$ 2524.33
-	Desvio padrão   ->    1865.36
+	Média de gastos ->   R$   2524.33
+	Desvio padrão   -> ± R$   1865.36
 
 	Gastos com Cartão Corporativo 2016
-	Média de gastos -> R$ 1016.25
-	Desvio padrão   ->    979.13
+	Média de gastos ->   R$   1016.25
+	Desvio padrão   -> ± R$   979.13
 
 	Gastos com Cartão Corporativo 2015
-	Média de gastos -> R$ 786.42
-	Desvio padrão   ->    598.68
+	Média de gastos ->   R$   786.42
+	Desvio padrão   -> ± R$   598.68
 
 ```
-![Gastos 2018](images/Gastos%20com%20Cartão%20Corporativo%202018.png)
-![Gastos 2017](images/Gastos%20com%20Cartão%20Corporativo%202017.png)
-![Gastos 2016](images/Gastos%20com%20Cartão%20Corporativo%202016.png)
-![Gastos 2015](images/Gastos%20com%20Cartão%20Corporativo%202015.png)
+![Gastos 2015-2018](images/mulplot.png)
+![Gastos 2018](images/sinplot-2018.png)
+![Gastos 2017](images/sinplot-2017.png)
+![Gastos 2016](images/sinplot-2016.png)
+![Gastos 2015](images/sinplot-2015.png)
