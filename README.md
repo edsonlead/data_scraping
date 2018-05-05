@@ -13,6 +13,10 @@ Raspagem de dados públicos
 		* Gráficos apresentados em bilhões de reais x anos(2004-2017)
 
 	* Post no site: [link](http://edsonlead.com/hackeando-gastos-governamentais-com-python-3/)
+```
+	Sábado, 05 Maio 2018
+	A url do Portal da Transparência não está funcional
+```
 
 ***
 
@@ -24,10 +28,10 @@ Raspagem de dados públicos
 
 ***
 
-* [003 - Cartão Corporativo do Governo do Estado do Ceará (2015 - 2017)](003/)
+* [003 - Cartão Corporativo do Governo do Estado do Ceará (2015 - 2018)](003/)
 
     * Dados recuperados do Portal da Transparência do Governo do Estado do Ceará
-    * Dados de gastos do cartão corporativo de responsabilidade do Chefe do Poder Executivo, período de 2015 a 2017
+    * Dados de gastos do cartão corporativo de responsabilidade do Chefe do Poder Executivo, período de 2015 a 2018
     * Média de gastos e desvio padrão anuais
     * Gráficos ilustrando os gastos do cartão corporativo
 
@@ -42,5 +46,11 @@ Raspagem de dados públicos
     * Lista de animes do site em tabelas no formato html
 
     * Post no site: [link](http://edsonlead.com/lista-de-animes-do-site-saiko/)
+```
+    Sábado, 05 Maio 2018
+    Site em manutenção:
+    Os links para downloads de animes foram removidos do site
+``` 
+
 
 *** 
