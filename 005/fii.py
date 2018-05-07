@@ -10,7 +10,6 @@ html = simple_get(url)
 soup = BeautifulSoup(html, 'html.parser')
 
 table_fii = soup.find('table')
-
 table_tr = table_fii.find_all('tr')
 del table_tr[0]
 
@@ -26,7 +25,14 @@ def fii():
 
         url_fii = new_url+link_fii
 
-        info_fii = url_fii+'#informacoes_basicas'
+        urlinfos(url_fii,'#informacoes_basicas',file_tmp)
+        infofii(file_tmp)
+
+    print('Finish')
+
+
+def urlinfos(url_fii, id_url,file_tmp):
+        info_fii = url_fii+id_url
 
         html_fii = simple_get(info_fii)
 
@@ -37,9 +43,6 @@ def fii():
         response = session.body()
         soup_fii = BeautifulSoup(response, 'lxml')
         tmp.write(soup_fii.prettify())
-    
-        infos_fii = infofii(file_tmp)
-
 
 
 def infofii(file_tmp):
@@ -49,7 +52,12 @@ def infofii(file_tmp):
 
     soup = BeautifulSoup(tmp, 'html.parser')
 
-    description = soup.find(id='lbl_des').text.strip()
+    description = soup.find(id='lbl_des')
+
+    if description is not None:
+        description = description.text.strip()
+    else:
+        pass
 
     table_info = soup.find('table', class_='scroll_bar_grossa_clube_fii')
     table_info_tr = table_info.find_all('tr')
@@ -79,6 +87,10 @@ def infofii(file_tmp):
     info_fii_tmp.write(description+'\n\n')
     info_fii_tmp.close()
 
+#def proventos():
 
+#def patrimonial():
 
+#def comunicados():
+   
 fii()
